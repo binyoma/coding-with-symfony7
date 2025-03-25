@@ -11,7 +11,5 @@ class MainController
     public function homepage(): Response
     {
         return new Response('Hello World!');
-
     }
-
 }
