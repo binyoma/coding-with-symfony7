@@ -9,9 +9,10 @@
 /vendor/
 ###< symfony/framework-bundle ###
 
-###IDE
+### IDE ###
 /.idea/
 .idea/
+### IDE ###
 ###> php-cs-fixer/shim ###
 /.php-cs-fixer.php
 /.php-cs-fixer.cache
