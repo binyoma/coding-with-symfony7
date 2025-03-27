@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Starship;
 use App\Repository\StarshipRepo;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,10 +17,14 @@ class MainController extends AbstractController
 {
     #[Route('/', name: 'app_homepage')]
     public function homepage(
-        StarshipRepo $starshipRepository
+        EntityManagerInterface $em,
     ): Response
     {
-        $ships = $starshipRepository->findAll();
+        $ships = $em->createQueryBuilder()
+            ->select('s')
+            ->from(Starship::class, 's')
+            ->getQuery()
+        ->getResult();
         $myShip = $ships[array_rand($ships)];
 
         return $this->render('main/homepage.html.twig', [

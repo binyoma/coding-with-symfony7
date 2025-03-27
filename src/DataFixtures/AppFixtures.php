@@ -3,7 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Starship;
-use App\Model\StarshipStatusEnum;
+use App\Entity\StarshipStatusEnum;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 

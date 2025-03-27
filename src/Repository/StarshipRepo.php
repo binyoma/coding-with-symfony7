@@ -2,8 +2,8 @@
 
 namespace App\Repository;
 
+use App\Entity\StarshipStatusEnum;
 use App\Model\Starship;
-use App\Model\StarshipStatusEnum;
 use Psr\Log\LoggerInterface;
 
 class StarshipRepo
