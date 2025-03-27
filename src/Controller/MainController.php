@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Repository\StarshipRepository;
+use App\Repository\StarshipRepo;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\DependencyInjection\Attribute\Autowire;
 use Symfony\Component\HttpFoundation\Response;
@@ -15,7 +15,7 @@ class MainController extends AbstractController
 {
     #[Route('/', name: 'app_homepage')]
     public function homepage(
-        StarshipRepository $starshipRepository
+        StarshipRepo $starshipRepository
     ): Response
     {
         $ships = $starshipRepository->findAll();
